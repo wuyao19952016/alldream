@@ -2,11 +2,13 @@
 #include<conio.h>
 #include<stdlib.h>
 #include<windows.h>
-// 全局变量
-int post_x,post_y;//飞机位置
-int high,width;//游戏画面尺寸
-int bullet_x,bullet_y;
-
+#include<time.h>
+/*全局变量 */
+int post_x,post_y;		//飞机位置
+int high,width;			//游戏画面尺寸
+int bullet_x,bullet_y;	//子弹坐标 
+int enemy_x,enemy_y;	//敌人坐标 
+int score=0;			//得分 
 
 void HideCursor();
 void startup();
@@ -17,6 +19,7 @@ void gotoxy(int x,int y);
 
 int main()
 {
+	srand(time(0));
 	HideCursor();
 	startup();
 	while(1)
@@ -36,8 +39,12 @@ void startup()
 	
 	post_x=high/2;
 	post_y=width/2;
+	
 	bullet_x=0;
 	bullet_y=post_y;
+	
+	enemy_x=1;
+	enemy_y=post_y; 
 }
 
 void HideCursor()
@@ -59,6 +66,8 @@ void show()
 			}else if(i==bullet_x&&j==bullet_y)
 			{
 				printf("|");
+			}else if(i==enemy_x&&j==enemy_y){
+				printf("@");
 			}else 
 			{
 				printf(" ");
@@ -66,12 +75,28 @@ void show()
 		}
 		printf("\n");
 	}
+	printf("得分：%d\n",score);
 }
 void updateWithoutInput()
 {
 	if(bullet_x>-1)
 	{
 		bullet_x--;
+	}
+	
+	static int speed=0;
+	
+	speed=speed%10+1;
+	if(speed==10)
+	{
+		enemy_x++;
+	}
+	if( enemy_x>high)
+	{
+		enemy_x=1;
+		enemy_y=rand()%width+1;	
+		if(enemy_x==bullet_x&&enemy_y==bullet_y)
+			score++;
 	}
 }
 
