@@ -74,6 +74,46 @@ git reset --hard <commit id>
 
 **git reflog**查看历史命令
 
+**git rm <file>** 命令，删除文件
+
+## 远程仓库
+
+先注册GitHub账号。之后
+
+1. 创建SSH Key.在主目录下看看有没有.ssh目录，查看有没有id_rsa和id_rsa.pub文件。有的话跳到下一步，没有的话，打开Shell（Windows下打开Git Bash），创建SSH Key：
+
+   ```shell
+   ssh-keygen -t rsa -C "youremail@example.com"
+   ```
+
+   一路回车默认，无需设置密码
+
+2. 登陆GitHub,打开Account settings -> SSH and GPG Keys页面:
+
+点击“add ssh key”,填上任意Title,在Key文本框里粘贴id_rsa.pub文件的内容
+
+### 添加远程仓库
+
+你已经在本地创建了一个Git仓库，又想在Github创建一个仓库，并且让这两个仓库进行远程同步。
+
+登陆Github，点击“Creat a new repo”,创建新仓库。
+
+1. 将已有的本地仓库与之关联，然后将本地仓库的内容推送到Github仓库
+2. 克隆新的仓库
+
+```shell
+1. 关联本地
+git remote add origin <url>
+git push -u origin master
+
+git push origin master
+2.克隆
+git clone <url>
+
+```
+
+
+
 ## 参考
 
 * 廖雪峰的Git教程
