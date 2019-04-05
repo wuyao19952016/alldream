@@ -61,6 +61,19 @@ git commit -m<message>
 
 如果我们在提交后对文件进行一些改动，通过 **git status**命令可以查看当前仓库的状态。我们可以知道文件被改动了，但还没有把修改进行提交。通过 **git diff**命令，查看具体修改。
 
+### 版本回退
+
+通过 **git log**命令查看提交日志。一大串的数字其实是commit id（版本号）
+
+回退到上一个版本可以使用 **git reset**命令
+
+```shell
+git reset --hard HEAD^
+git reset --hard <commit id>
+```
+
+**git reflog**查看历史命令
+
 ## 参考
 
 * 廖雪峰的Git教程
