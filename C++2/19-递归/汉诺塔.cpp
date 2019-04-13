@@ -25,7 +25,7 @@ void hanno(int n,char sta,char end,char temp)// 将n个盘子从sta借助temp移动到end
 int main()
 {
 	int n;
-	scanf("%d",&n);
+	cin>>n; 
 	
 	hanno(n,'A','B','C');
 	
