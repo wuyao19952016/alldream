@@ -1,12 +1,11 @@
 #include<iostream>
 using namespace std;
-// 3 4
+//3 4
 int main()
 {
     int a,b,sum=0;
     cin>>a>>b;
-    //cout<<a+b;//鍙洿鎺ヨ緭鍑鸿〃杈惧紡
     sum=a+b;
-    cout<<sum;
+    cout<<a<<"与"<<b<<"的和为"<<sum;
     return 0;
 }
