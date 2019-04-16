@@ -6,6 +6,6 @@ int main()
     int a,b,sum=0;
     cin>>a>>b;
     sum=a+b;
-    cout<<a<<"Óë"<<b<<"µÄºÍÎª"<<sum;
+    cout<<a<<"ä¸"<<b<<"çš„å’Œä¸º"<<sum;
     return 0;
 }
