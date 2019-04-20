@@ -11,7 +11,7 @@ int main()
 	char key[100],key2[100];
 	while(1)
 	{
-		cout<<"ÇëÊäÈëÕËºÅ:";
+		cout<<"è¯·è¾“å…¥è´¦å·:";
 		gets(account);
 		
 		if(strlen(account)<10)
@@ -24,7 +24,7 @@ int main()
 	
 	while(1)
 	{
-		cout<<"ÇëÊäÈëÃÜÂë:";
+		cout<<"è¯·è¾“å…¥å¯†ç :";
 		gets(key);
 		if(strlen(key)<10)
 		{
@@ -43,11 +43,11 @@ int main()
 			
 			if(flag==0)
 			{
-				cout<<"ÇëÔÙ´ÎÊäÈëÃÜÂë:";
+				cout<<"è¯·å†æ¬¡è¾“å…¥å¯†ç :";
 				gets(key2);
 				if(strcmp(key,key2)==0)
 				{
-					cout<<"×¢²á³É¹¦!"; 
+					cout<<"æ³¨å†ŒæˆåŠŸ!"; 
 					break;
 				}
 				

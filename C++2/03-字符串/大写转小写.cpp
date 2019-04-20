@@ -10,7 +10,7 @@ int main()
 	
 	for(int i=0;i<strlen(str);i++)
 	{
-		// ±È½ÏÔËËã·û 
+		// æ¯”è¾ƒè¿ç®—ç¬¦ 
 //		if(str[i]>='A'&&str[i]<='Z')
 //		{
 //			count++;
