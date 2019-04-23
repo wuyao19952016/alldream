@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-    cout<<"小明说:\"what is \\n\"";
+    cout<<"小明说:\"what is \\n?\"";
     return 0;
 }
