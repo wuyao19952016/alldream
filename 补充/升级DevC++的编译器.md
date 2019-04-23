@@ -8,7 +8,7 @@ MinGW可使用[MinGW Installation Manager](https://sourceforge.net/projects/ming
 
 解压完成后可手动进行环境配置，或者运行里面的自带的bat脚本进行配置。配置完成后打开命令行窗口，输入gcc -v查看版本，观察是否已经成功配置。
 
-![gcc -v](https://raw.githubusercontent.com/wylovecat/picture/master/img/gcc.png?token=AE6JLCQNRFMH4YQOD7UOJJS4X27VS)
+![gcc -v](https://cdn.all-dream.com/user/24ea64ea3b034d4ea442e522a4692266/20190423_154705_gcc.png)
 
 出现上图所示内容代表已经配置成功。
 
