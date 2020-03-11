@@ -6,9 +6,9 @@
 /*全局变量 */
 int post_x,post_y;		//飞机位置
 int high,width;			//游戏画面尺寸
-int bullet_x,bullet_y;	//子弹坐标 
-int enemy_x,enemy_y;	//敌人坐标 
-int score=0;			//得分 
+int bullet_x,bullet_y;	//子弹坐标
+int enemy_x,enemy_y;	//敌人坐标
+int score=0;			//得分
 
 void HideCursor();
 void startup();
@@ -28,7 +28,7 @@ int main()
 		updateWithoutInput();
 		updateWithInput();
 	}
-	
+
     return 0;
 }
 
@@ -36,15 +36,15 @@ void startup()
 {
 	high=20;
 	width=30;
-	
+
 	post_x=high/2;
 	post_y=width/2;
-	
+
 	bullet_x=0;
 	bullet_y=post_y;
-	
+
 	enemy_x=1;
-	enemy_y=post_y; 
+	enemy_y=post_y;
 }
 
 void HideCursor()
@@ -68,7 +68,7 @@ void show()
 				printf("|");
 			}else if(i==enemy_x&&j==enemy_y){
 				printf("@");
-			}else 
+			}else
 			{
 				printf(" ");
 			}
@@ -79,25 +79,32 @@ void show()
 }
 void updateWithoutInput()
 {
+    int flag=0;
 	if(bullet_x>-1)
 	{
 		bullet_x--;
 	}
-	
+
 	static int speed=0;
-	
+
 	speed=speed%10+1;
 	if(speed==10)
 	{
 		enemy_x++;
 	}
-	if( enemy_x>high)
+	if(enemy_x==bullet_x&&enemy_y==bullet_y)
+    {
+        score++;
+        flag=1;
+    }
+
+	if( enemy_x>high || flag)
 	{
 		enemy_x=1;
-		enemy_y=rand()%width+1;	
-		if(enemy_x==bullet_x&&enemy_y==bullet_y)
-			score++;
+		enemy_y=rand()%width+1;
+
 	}
+
 }
 
 void updateWithInput()

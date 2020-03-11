@@ -2,6 +2,7 @@
 /*
 将 n个盘子  从 A -> B 
 */ 
+using namespace std;
 
 void hanno(int n,char sta,char end,char temp)// 将n个盘子从sta借助temp移动到end 
 {
@@ -25,9 +26,10 @@ void hanno(int n,char sta,char end,char temp)// 将n个盘子从sta借助temp移动到end
 int main()
 {
 	int n;
-	cin>>n; 
+	char sta,end,tmp;
+	cin>>n>>sta>>end>>tmp; 
 	
-	hanno(n,'A','B','C');
+	hanno(n,sta,end,tmp);
 	
 	
 	return 0;
